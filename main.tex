@@ -1,0 +1,142 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{paracol}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fontawesome}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+
+% environment variables
+\InputIfFileExists{.env.tex}{}{%
+  \InputIfFileExists{.env.example.tex}{}{}%
+}
+% ----------- ---------
+
+% font 
+\usepackage{roboto}
+\renewcommand{\rmdefault}{\sfdefault} 
+% ----
+
+\input{sections/contact/contact.macro.tex}
+\input{sections/certifications/certifications.macro.tex}
+\input{sections/langage/langage.macro.tex}
+
+
+\geometry{left=1cm, right=1cm, top=1.5cm, bottom=2cm}
+\setlength{\columnsep}{1.5cm}
+
+% title sections
+\titleformat{\section}{\Large\bfseries\color{black}}{}{0em}{}[\titlerule]
+
+% Modification des colonnes pour avoir une colonne gauche plus petite
+\setcolumnwidth{0.38\textwidth, 0.62\textwidth}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{paracol}{2}
+  
+% left column
+\begin{flushleft}
+
+  % picture
+  \includegraphics[width=3.3cm]{assets/avatar.jpg} \\[1em]
+
+  \section*{Contact}
+  \begin{tabular}{ll}
+      \contactItem{\faPhone}{\phonenumber}
+      \contactItem{\faEnvelope}{\mail}
+      \contactItem{\faMapMarker}{\address}
+      \contactItem{\faGithub}{Noe-Favier}
+      \contactItem{\faCar}{Permis B}
+  \end{tabular}
+
+  \section*{Résumé}
+  \begin{flushleft}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  \end{flushleft}
+
+  \section*{Langues}
+  \begin{tabular}{ll}
+    \langageItem{Français}{Natif}
+    \langageItem{TOEIC}{855 / 990}
+    \langageItem{Espagnol}{A2}
+  \end{tabular}
+
+  \section*{Formation}
+  \begin{tabular}{ll}
+    \formationItem{Master 2 Web Mobile}{en cours}
+    \formationItem{Licence Pro DevOps}{2022 - 2023}
+    \formationItem{DUT Informatique}{2020 - 2022}
+    \formationItem{Bac STI2D, mention TB}{2020}
+    \formationItem{BIA aéronautique}{2017}
+  \end{tabular}
+
+\end{flushleft}
+
+% right column
+\switchcolumn
+
+\begin{flushleft}
+  
+  {\fontsize{45}{36}\selectfont \textbf{Noé Favier}} \\
+  \vspace{0.3em}
+  {\Large Alternant en informatique} \\
+  \vspace{1em}
+
+  \section*{Compétences}
+  \begin{tabular}{ll}
+    \langageItem{Langages}{Java, PHP, JavaScript, SQL, HTML/CSS}
+    \langageItem{Frameworks}{SpringBoot, Symfony, Angular, React}
+    \langageItem{DevOps}{Docker, CI/CD, Git}
+    \langageItem{Systèmes}{Linux, Windows}
+    \langageItem{Autres}{UML, Agile/Scrum}
+  \end{tabular}
+
+  \section*{Expériences professionnelles}
+
+  \textbf{Alternant développeur analyste} \hfill \textbf{2022 – 2025 (en cours)}  \\
+  \textit{Axopen, Lyon}\\
+  \begin{itemize}[left=0pt,label={--},nosep]
+    \item \textbf{totam rem} : sed quia consequuntur magni dolores eos qui ratione voluptatem
+    \item \textbf{sed quia non} : sed quia consequuntur magni dolores eos
+  \end{itemize}
+  \vspace{1em}
+  
+  \textbf{Stagiaire développeur analyste} \hfill \textbf{Avril – Juin 2022} \\
+  \textit{Axopen, Lyon} \\
+  \begin{itemize}[left=0pt,label={--},nosep]
+    \item \textbf{totam rem} : sed quia consequuntur magni dolores eos qui ratione voluptatem
+    \item \textbf{sed quia non} : sed quia consequuntur magni dolores eos
+    \item \textbf{sed quia non} : sed quia consequuntur magni dolores eos
+    \item \textbf{sed quia non} : sed quia consequuntur magni dolores eos
+  \end{itemize}
+  \vspace{1em}
+  
+  \textbf{Emplois étudiant} \hfill \textbf{2020 - 2021} \\
+  \begin{itemize}[left=0pt,label={--},nosep]
+    \item \textit{Macdonald's, Salaise} \\
+    \item \textit{Espaces Verts, CCPR (38550)} \\
+    \item \textit{Rippeur, CCPR (38550)} \\
+  \end{itemize}
+\end{flushleft}
+
+\section*{Projets personnels remarquables}
+
+\textbf{FileDrop}
+\begin{itemize}[left=0pt,label={--},nosep]
+  \item \textbf{illum qui dolorem} : sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt
+  \item \textbf{totam rem} : sed quia consequuntur magni dolores eos qui ratione voluptatem
+  \item \textbf{sed quia non} : sed quia consequuntur magni dolores eos
+  \vspace{1em}
+\end{itemize}
+  
+\end{paracol}
+
+\end{document}

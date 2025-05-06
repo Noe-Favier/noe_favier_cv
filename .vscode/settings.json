@@ -1,0 +1,31 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "docker-latexmk",
+            "command": "docker-compose",
+            "args": [
+                "exec",
+                "latex",
+                "latexmk",
+                "-pdf",
+                "-f",
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "-outdir=build",
+                "main.tex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "Build via Docker Compose",
+            "tools": [
+                "docker-latexmk"
+            ]
+        }
+    ],
+    "latex-workshop.formatting.latex": "tex-fmt",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "editor.formatOnSave": false
+}

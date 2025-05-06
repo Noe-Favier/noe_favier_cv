@@ -1,0 +1,17 @@
+% Define contact item macros for a CV
+% Usage: 
+% \contactItem{\faIcon}{Text} - for items with space after
+
+% Regular contact item with customizable spacing
+\newcommand{\contactItem}[3][0.2cm]{%
+    #2 & #3 \\[#1]%
+}
+
+% Example usage:
+% \begin{tabular}{ll}
+%     \contactItem{\faPhone}{07 83 26 61 23}
+%     \contactItem{\faEnvelope}{noe.favier@outlook.com}
+%     \contactItem{\faMapMarker}{30 bis avenue Roger Salengro, Villeurbanne}
+%     \contactItem{\faGithub}{Noe-Favier}
+%     \contactItem{\faCar}{Permis B}
+% \end{tabular}
