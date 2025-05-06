@@ -12,6 +12,10 @@ This repository contains the LaTeX source code for my CV.
 
 This project uses `latexmk` within a Docker container to ensure a consistent build environment.
 
+### Secrets
+
+You'll need to create `.env.text` file from the [.env.example.tex](.env.example.tex) file and fill it with your data
+
 ### Requirements
 
 - `docker` and `docker-compose`
