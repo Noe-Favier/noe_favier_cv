@@ -10,6 +10,12 @@
 \usepackage{titlesec}
 \usepackage{xcolor}
 \usepackage{ragged2e}
+\usepackage{ifthen}
+\usepackage{hyperref}
+
+% styles file
+\usepackage{styles}
+% ------ ----
 
 % environment variables
 \InputIfFileExists{.env.tex}{}{%
@@ -17,14 +23,17 @@
 }
 % ----------- ---------
 
-% font 
-\usepackage{roboto}
-\renewcommand{\rmdefault}{\sfdefault} 
-% ----
-
+% macros
 \input{sections/contact/contact.macro.tex}
+
 \input{sections/certifications/certifications.macro.tex}
+
 \input{sections/langage/langage.macro.tex}
+
+\input{sections/skills/skills.macro.tex}
+
+\input{sections/career/career.macro.tex}
+% ------
 
 
 \geometry{left=1cm, right=1cm, top=1.5cm, bottom=2cm}
@@ -53,7 +62,8 @@
       \contactItem{\faPhone}{\secretPhoneNumber}
       \contactItem{\faEnvelope}{\secretEmail}
       \contactItem{\faMapMarker}{\secretAddress}
-      \contactItem{\faGithub}{Noe-Favier}
+      \contactItem{\faGithub}{\href{https://github.com/Noe-Favier}{Noe-Favier}}
+      \contactItem{\faGlobe}{\href{https://noefavier.dev}{noefavier.dev}}
       \contactItem{\faCar}{Permis B}
   \end{tabular}
 
@@ -91,13 +101,17 @@
   \vspace{1em}
 
   \section*{Compétences}
-  \begin{tabular}{ll}
-    \langageItem{Langages}{Java, PHP, JavaScript, SQL, HTML/CSS}
-    \langageItem{Frameworks}{SpringBoot, Symfony, Angular, React}
-    \langageItem{DevOps}{Docker, CI/CD, Git}
-    \langageItem{Systèmes}{Linux, Windows}
-    \langageItem{Autres}{UML, Agile/Scrum}
-  \end{tabular}
+
+  \textbf{Frontend}\\
+  \skillItem{Angular}{}, \skillItem{Vue3}{}, \skillItem{React}{}, \skillItem{Nuxt}{}, \skillItem{Gatsby}{}, \skillItem{Tailwind}{}, \skillItem{SASS}{}
+  
+  \vspace{0.5em}
+  \textbf{Backend}\\
+  \skillItem{Java}{Spring Boot, Wildfly}, \skillItem{PHP}{Symfony}, \skillItem{C\#}{.NET, Blazor}, \skillItem{Rust}{}, \skillItem{Go}{}, \skillItem{Typescript}{Nest}, \skillItem{GraphQL}{}
+  
+  \vspace{0.5em}
+  \textbf{Tooling}\\
+  \skillItem{Git}{}, \skillItem{Docker}{}, \skillItem{Kubernetes}{}, \skillItem{Ansible}{}, \skillItem{Terraform}{}, \skillItem{Redis}{}, \skillItem{CI/CD}{GitlabCICD, Github Actions}, \skillItem{PgSQL}{}, \skillItem{Elasticsearch}{}
 
   \section*{Expériences professionnelles}
 
@@ -125,17 +139,34 @@
     \item \textit{Espaces Verts, CCPR (38550)} \\
     \item \textit{Rippeur, CCPR (38550)} \\
   \end{itemize}
-\end{flushleft}
 
-\section*{Projets personnels remarquables}
+  \section*{Projets personnels remarquables}
 
-\textbf{FileDrop}
-\begin{itemize}[left=0pt,label={--},nosep]
-  \item \textbf{illum qui dolorem} : sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt
-  \item \textbf{totam rem} : sed quia consequuntur magni dolores eos qui ratione voluptatem
-  \item \textbf{sed quia non} : sed quia consequuntur magni dolores eos
+  \textbf{Filedrop} \hfill \textbf{Rust, Vue3} \\
+  \begin{itemize}[left=0pt,label={--},nosep]
+    \item \textbf{illum qui dolorem} : sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt
+    \item \textbf{totam rem} : sed quia consequuntur magni dolores eos qui ratione voluptatem
+    \item \textbf{sed quia non} : sed quia consequuntur magni dolores eos
+  \end{itemize}
   \vspace{1em}
-\end{itemize}
+
+  \textbf{TSC} \hfill \textbf{Rust, Vue3} \\
+  \begin{itemize}[left=0pt,label={--},nosep]
+    \item \textbf{illum qui dolorem} : sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt
+    \item \textbf{totam rem} : sed quia consequuntur magni dolores eos qui ratione voluptatem
+    \item \textbf{sed quia non} : sed quia consequuntur magni dolores eos
+  \end{itemize}
+  \vspace{1em}
+
+  \textbf{DB Drop} \hfill \textbf{Rust, Vue3} \\
+  \begin{itemize}[left=0pt,label={--},nosep]
+    \item \textbf{illum qui dolorem} : sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt
+    \item \textbf{totam rem} : sed quia consequuntur magni dolores eos qui ratione voluptatem
+    \item \textbf{sed quia non} : sed quia consequuntur magni dolores eos
+  \end{itemize}
+  \vspace{1em}
+
+  \end{flushleft}
   
 \end{paracol}
 
