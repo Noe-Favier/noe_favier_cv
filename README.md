@@ -14,7 +14,7 @@ This project uses `latexmk` within a Docker container to ensure a consistent bui
 
 ### Secrets
 
-You'll need to create `.env.text` file from the [.env.example.tex](.env.example.tex) file and fill it with your data
+You'll need to create `.env.tex` file from the [.env.example.tex](.env.example.tex) file and fill it with your data
 
 ### Requirements
 
