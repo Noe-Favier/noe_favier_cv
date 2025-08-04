@@ -25,16 +25,11 @@
 
 % macros
 \input{sections/contact/contact.macro.tex}
-
 \input{sections/certifications/certifications.macro.tex}
-
 \input{sections/langage/langage.macro.tex}
-
 \input{sections/skills/skills.macro.tex}
-
 \input{sections/career/career.macro.tex}
 % ------
-
 
 \geometry{left=1cm, right=1cm, top=1.5cm, bottom=2cm}
 \setlength{\columnsep}{1.5cm}
@@ -55,7 +50,7 @@
 \begin{flushleft}
 
   % picture
-  \includegraphics[width=3.3cm]{assets/avatar.jpg} \\[1em]
+  \includegraphics[width=3.3cm, trim=\secretPictureTrim, clip]{\secretPicture} \\[1em]
 
   \section*{Contact}
   \begin{tabular}{ll}
@@ -133,7 +128,8 @@
   \cventryBullet{Emplois étudiant}{2020 - 2022}{
     Macdonald's \textit{(Salaise, 38150)}, Espaces Verts \textit{(EBER, 38550)}, Rippeur \textit{(EBER, 38550)} \\
   }
-  \section*{Projets personnels remarquables}
+  
+  \section*{Projets personnels notables}
 
   \textbf{Filedrop} \hfill \textbf{Rust, Vue3} \\
   Une solution de transfert de fichiers simple et efficace, pensée pour une installation rapide.
@@ -154,7 +150,7 @@
   \end{itemize}
   \vspace{1em}
 
-  \end{flushleft}
+\end{flushleft}
   
 \end{paracol}
 
