@@ -18,7 +18,7 @@
 % ------ ----
 
 % environment variables
-\InputIfFileExists{.env.tex}{}{%
+\InputIfFileExists{.env.tex}{}{
   \InputIfFileExists{.env.example.tex}{}{}%
 }
 % ----------- ---------
@@ -49,7 +49,9 @@
 \begin{flushleft}
 
   % picture
-  \includegraphics[width=3.3cm, trim=\secretPictureTrim, clip]{\secretPicture} \\[0.8em]
+  \ifthenelse{\equal{\secretPicture}{}}{}{%
+    \includegraphics[width=3.8cm, clip]{\secretPicture} \\[0.8em]
+  }
 
   \section*{Contact}
   \begin{tabular}{ll}
@@ -65,7 +67,7 @@
   \begin{justify}
   \hyphenpenalty=10000\exhyphenpenalty=10000\sloppy
   Actuellement en \textbf{fin de Master 2} web, \\
-  je suis à la recherche d'un CDI qui me permettra de relever de nouveaux défis et d'explorer de nouveaux horizons professionnels. \\
+  je suis à la recherche d'un CDI qui me permettra de relever de nouveaux défis et d'explorer de nouveaux horizons professionnels.
   Je souhaite mettre mes compétences au service de projets innovants tout en continuant à apprendre et à évoluer dans un milieu social et dynamique.
   \end{justify}
 
@@ -78,7 +80,7 @@
 
   \section*{Formation}
   \begin{tabular}{ll}
-    \formationItem{Master 2 Web Mobile}{en cours}
+    \formationItem{Master 2 Web Mobile}{terminé en 2025}
     \formationItem{Licence Pro DevOps}{2022 - 2023}
     \formationItem{DUT Informatique}{2020 - 2022}
     \formationItem{Bac STI2D, mention TB}{2020}
@@ -100,11 +102,11 @@
   \section*{Compétences}
 
   \textbf{Frontend}\\
-  \skillItem{Angular}{}, \skillItem{Vue3}{}, \skillItem{React}{}, \skillItem{Nuxt}{}, \skillItem{Gatsby}{}, \skillItem{Tailwind}{}, \skillItem{SASS}{}
-  
+  \skillItem{Angular}{}, \skillItem{Vue3}{}, \skillItem{React}{}, \skillItem{Nuxt}{}, \skillItem{Next.js}{}, \skillItem{Tailwind}{}, \skillItem{SASS}{}
+
   \vspace{0.4em}
   \textbf{Backend}\\
-  \skillItem{Java}{Spring Boot, Wildfly}, \skillItem{PHP}{Symfony}, \skillItem{C\#}{.NET, Blazor}, \skillItem{Rust}{}, \skillItem{Go}{}, \skillItem{Typescript}{Nest}, \skillItem{GraphQL}{}
+  \skillItem{Java}{SpringBoot, Wildfly}, \skillItem{PHP}{Symfony}, \skillItem{C\#}{.NET, Blazor}, \\ \skillItem{Rust}{}, \skillItem{Go}{}, \skillItem{Typescript}{Nest}, \skillItem{GraphQL}{}
   
   \vspace{0.4em}
   \textbf{Tooling}\\
@@ -112,9 +114,9 @@
 
   \section*{Expériences professionnelles}
 
-  \cvEntryDescription{Alternant développeur analyste}{2022 – 2025 (en cours)}{Axopen, Lyon}{%
+  \cvEntryDescription{Alternant développeur analyste}{2022 – 2025 (en cours)}{Axopen, Lyon}{
       Développement web \textbf{java - spring boot} \& \textbf{angular}; missions d'expertise ou devops.
-      \begin{itemize}[left=0pt,label={--},nosep,topsep=2pt]
+      \begin{itemize}[left=0pt,nosep,topsep=2pt]
         \item \textbf{Web} : Création et maintenance d'applications en utilisant des frameworks modernes, contact client.
         \item \textbf{Missions DevOps} : Mise en place de pipelines CI/CD, gestion de conteneurs Docker, installations serveur.
         \item \textbf{Expertise technique} : Audits de code et recommandations d'amélioration.
@@ -124,7 +126,7 @@
     }
   \vspace{0.8em}
   
-  \cventryBullet{Emplois étudiant}{2020 - 2022}{%
+  \cventryBullet{Autres experiences}{2020 - 2022}{
     \item Macdonald's \textit{(Salaise, 38150)}
     \item Espaces Verts \textit{(EBER, 38550)}
     \item Rippeur \textit{(EBER, 38550)}
@@ -134,7 +136,7 @@
 
   \textbf{Filedrop} \hfill \textbf{Rust, Vue3} \\
   Solution de transfert de fichiers simple et efficace, pensée pour une installation rapide.
-  \begin{itemize}[left=0pt,label={--},nosep,topsep=2pt]
+  \begin{itemize}[left=0pt,nosep,topsep=2pt]
     \item \textbf{Performances} : écriture en Rust pour une rapidité optimale.
     \item \textbf{Integration} : conteneurisé avec Docker, déployé sur le store de CasaOS.
   \end{itemize}
@@ -142,7 +144,7 @@
 
   \textbf{DB Drop} \hfill \textbf{Go, Vue3} \\
   Outil de gestion de base de données sur navigateur, permettant de visualiser et modifier des données de manière intuitive.
-  \begin{itemize}[left=0pt,label={--},nosep,topsep=2pt]
+  \begin{itemize}[left=0pt,nosep,topsep=2pt]
     \item \textbf{Front} : développement en Vue3 pour une interface utilisateur moderne.
     \item \textbf{Back} : utilisation de Go pour une gestion de données efficace.
     \item \textbf{Base de données} : support de PostgreSQL, avec des plans d'extension vers d'autres SGBD.
