@@ -28,11 +28,11 @@ On save, the LaTeX Workshop extension will automatically build the PDF using the
 ### Manual Build
 
 ```bash
-docker-compose exec latex latexmk -pdf -interaction=nonstopmode -synctex=1 -outdir=build main.tex
+docker-compose exec latex latexmk -pdf -interaction=nonstopmode -synctex=1 -jobname=noe-favier_cv -outdir=build main.tex
 ```
 
 ```bash
-docker-compose exec latex latexmk -C -outdir=build main.tex; docker-compose exec latex latexmk -pdf -interaction=nonstopmode -synctex=1 -outdir=build main.tex
+docker-compose exec latex latexmk -C -outdir=build main.tex; docker-compose exec latex latexmk -pdf -interaction=nonstopmode -synctex=1 -jobname=noe-favier_cv -outdir=build main.tex
 ```
 
 ### ATS optimization

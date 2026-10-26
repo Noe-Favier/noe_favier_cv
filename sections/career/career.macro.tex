@@ -1,6 +1,9 @@
 \newcommand{\cvEntryDescription}[4]{
     \textbf{#1} \hfill \textbf{#2} \\
-    \textit{#3} \\
+    \ifx&#3&%
+    \else
+        \textit{#3} \\
+    \fi
     \vspace{4pt}
     #4
 }

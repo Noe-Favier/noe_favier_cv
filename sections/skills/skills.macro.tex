@@ -1,8 +1,32 @@
+\makeatletter
+\newcommand{\skillCategory}[1]{%
+  \hangindent=0pt
+  \par\noindent{\large #1}\par
+  \vspace{0.2em}%
+  \hangindent=1em\hangafter=0
+}
+
 \newcommand{\skillItem}[2]{%
-  {#1}%
-  \ifx&#2&%
+  \@ifnextchar\bgroup
+    {\skillItemBold{#1}{#2}}%
+    {\skillItemRegular{#1}{#2}}%
+}
+
+\newcommand{\skillItemRegular}[2]{%
+  #1%
+  \skillItemDetails{#2}%
+}
+
+\newcommand{\skillItemBold}[3]{%
+  \textbf{#1}%
+  \skillItemDetails{#2}%
+}
+
+\newcommand{\skillItemDetails}[1]{%
+  \ifx&#1&%
     % no second argument provided, do nothing
   \else
-    ~(\textit{\footnotesize #2})%
+    ~(\textit{\footnotesize #1})%
   \fi
 }
+\makeatother
